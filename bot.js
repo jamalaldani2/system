@@ -43,39 +43,7 @@ client.on("message", (message) => {
             });
         }).catch(console.error);
     }
- 
-        
-        
-        
- client.on("message", message => {
-    if (message.content === "Wrules") {
-           message.react("✅")
-              message.react("❌")
-     const embed = new Discord.RichEmbed() 
-         .setColor("#ffff00")
-         .setDescription(`
-  ●▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬●
-1) لا تنشر سيرفرات دسكورد بالعام او بالخاص..
-2) لا تتكلم عن اشياء مشبوهة او اشياء مالها داعي
-3) لا تلعب بالهاك وتدخل مع ناس يلعبون بهاك بماين كرافت
-4) حاول انك ما تسب احد..
-5) لا تكون عنصري ولا تتحرش بأحد بطريقة وصخة...
-6) لا تضحك ع أشياء حساسة..
-7) لا تتكلم عن السياسة ا شيء ديني او حساس
-8) أحترم الأخرين وفكر باللي تقوله
-9) لا تتحرش بالناس ولا تكون شخص متنمر
-10) لا تنشر سيرفرات اخرى ماين كرافت
-11) لا ترسل روابط مواقع او اي شيء اباحي 
-12) لا تحرق ع ناس افلام او مقاطع الخ..
-13) لا تناقش او تصنع نقاشات بين الآخريين
-14) لا تشغل اغاني مزعجة ولا تخرب ع الآخريين
-15) لا تنتحل شخصيات ناس ثانية..
-16) لا تنشر دسكورد او اكاونتات مهكره او اي شيء ثاني
-17) ممنوع السبام
-●▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬●
-  
-    `)       
-        
+
  
   if (message.content.startsWith("Kxclose")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
@@ -99,6 +67,25 @@ client.on("message", (message) => {
    }
 
 
+client.on("message", msg => {
+    var prefix = "Kx";
+if(msg.content.startsWith (prefix + "id")) {
+if(!msg.channel.guild) return msg.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');         
+const embed = new Discord.RichEmbed();
+embed.addField("🌪  الاسم", `**[ ${msg.author.username}#${msg.author.discriminator} ]**`, true)
+   .addField("🆔  الايدي", `**[ ${msg.author.id} ]**`, true)
+   .setColor("RANDOM")
+   .setFooter(msg.author.username , msg.author.avatarURL)
+   .setThumbnail(`${msg.author.avatarURL}`)
+   .setTimestamp()
+   .setURL(`${msg.author.avatarURL}`)
+   .addField('🕵  الحالة', `**[ ${msg.author.presence.status.toUpperCase()} ]**`, true)
+   .addField('🛰   يلعب', `**[ ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name} ]**`, true)
+   .addField('🎖  الرتب', `**[ ${msg.member.roles.filter(r => r.name).size} ]**`, true)
+   .addField('🤖  هل هو بوت', `**[ ${msg.author.bot.toString().toUpperCase()} ]**`, true);
+msg.channel.send({embed: embed})
+}
+});
 
 
 
