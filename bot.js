@@ -178,7 +178,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-const prefix = "W";
+const prefix = "Kx";
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
 
