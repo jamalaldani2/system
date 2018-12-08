@@ -44,29 +44,11 @@ client.on("message", (message) => {
         }).catch(console.error);
     }
  
- 
-  if (message.content.startsWith("Kxclose")) {
-        if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
- 
-       message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`Kxclose\`. This will time out in 10 seconds and be cancelled.`)
-           .then((m) => {
-               message.channel.awaitMessages(response => response.content === 'Kxclose', {
-                       max: 1,
-                       time: 10000,
-                       errors: ['time'],
-                   })    
-                   .then((collected) => {
-                       message.channel.delete();
-                   })    
-                   .catch(() => {
-                       m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
-                           m2.delete();
-                       }, 3000);
-                   });
-           });
-   }
+        
+        
+        
  client.on("message", message => {
-    if (message.content === "Kxrules") {
+    if (message.content === "Wrules") {
            message.react("✅")
               message.react("❌")
      const embed = new Discord.RichEmbed() 
@@ -92,8 +74,30 @@ client.on("message", (message) => {
 17) ممنوع السبام
 ●▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬●
   
-    `)
-});
+    `)       
+        
+ 
+  if (message.content.startsWith("Kxclose")) {
+        if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
+ 
+       message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`Kxclose\`. This will time out in 10 seconds and be cancelled.`)
+           .then((m) => {
+               message.channel.awaitMessages(response => response.content === 'Kxclose', {
+                       max: 1,
+                       time: 10000,
+                       errors: ['time'],
+                   })    
+                   .then((collected) => {
+                       message.channel.delete();
+                   })    
+                   .catch(() => {
+                       m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
+                           m2.delete();
+                       }, 3000);
+                   });
+           });
+   }
+
 
 
 
