@@ -2,6 +2,8 @@
 const client = new Discord.Client();
 var prefix = "*";
 client.on("message", message => {
+             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
+            if(channel) {
             if(message.content.startsWith("*تقديم")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
