@@ -360,6 +360,22 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
+client.on('message', message => {
+            if (message.content.startsWith("Kxhelp")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField(' **  Public Commands - اوامر عامة  **
+❖ Kxbc{برودكاست}
+       ❖ Kxban{تبند حدا}
+       ❖ Kxkick{كيك لاحدا}
+       ❖ Kxmute{اسكات حدا}
+       ❖ Kxunmute{جعل الشخص يحكي}
+       ❖ Kxid{ظهور الid الخاص فيك}
+       ❖ Kxmember{لمعرفة عدد اشخاص السيرفر}
+**')
+  message.channel.sendEmbed(embed);//Codes Server
+    }
+});
 
 
 
