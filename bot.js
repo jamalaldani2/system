@@ -372,7 +372,7 @@ client.on('message', message => {
 .addField('  ❖ Kxunmute{جعل الشخص يحكي} ')
 .addField('  ❖ Kxid{ظهور الid الخاص فيك} ')
 .addField('  ❖ Kxmember{لمعرفة عدد اشخاص السيرفر} ')
-
+.setColor('#7d2dbe')
   message.channel.sendEmbed(embed);//Codes Server
     }
 });
