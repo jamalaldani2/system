@@ -17,10 +17,6 @@ client.on('message', message => {
       message.channel.send(IzRo);
     });
 
-client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","√"));
-    });
-
 
 
 
