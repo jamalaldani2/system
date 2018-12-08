@@ -364,7 +364,7 @@ client.on('message', message => {
   var prefix = "Kx";
  if (message.content.startsWith(prefix + 'help')) {
      let pages = [
- 	`=-=-=-=-=-=** 🌍 Commands - اوامر 🌍 **=-=-=-=-=-=
+ 	`=** 🌍 Commands - اوامر 🌍 **`
 **     ❖ Kxbc{برودكاست}
        ❖ Kxban{تبند حدا}
        ❖ Kxkick{كيك لاحدا}
