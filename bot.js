@@ -128,6 +128,39 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 });
 
 
+client.on('message', function(message) {
+    if (message.content == "Kxclear") {
+        if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            message.channel.fetchMessages()
+               .then(function(list){
+                    message.channel.bulkDelete(list);
+                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})
+        }
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
