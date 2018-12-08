@@ -360,24 +360,6 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
-client.on('message', message => {
-  var prefix = "Kx";
- if (message.content.startsWith(prefix + 'help')) {
-     let pages = [
- 	 Commands - اوامر
-       ❖ Kxbc{برودكاست}
-       ❖ Kxban{تبند حدا}
-       ❖ Kxkick{كيك لاحدا}
-       ❖ Kxmute{اسكات حدا}
-       ❖ Kxunmute{جعل الشخص يحكي}
-       ❖ Kxid{ظهور الid الخاص فيك}
-       ❖ Kxmember{لمعرفة عدد اشخاص السيرفر}
-    })
-         })
-     })
-     }
- });
-
 
 
 
