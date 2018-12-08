@@ -372,7 +372,11 @@ client.on('message', message => {
        ❖ Kxunmute{جعل الشخص يحكي}
        ❖ Kxid{ظهور الid الخاص فيك}
        ❖ Kxmember{لمعرفة عدد اشخاص السيرفر}
-
+    })
+         })
+     })
+     }
+ });
 
 
 
