@@ -163,7 +163,17 @@ msg.channel.send({embed: embed})
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("name","✓"));
     });
-
+client.on('message', message => {
+              if (!message.channel.guild) return;
+      if(message.content =='Kxmember')
+      var IzRo = new Discord.RichEmbed()
+      .setThumbnail(message.author.iconURL)
+      .setFooter(message.author.username, message.author.avatarURL)
+      .setTitle(' عدد اعضاء السيرفر  ')
+      .addBlankField(true)
+      .addField('.',`${message.guild.memberCount}`)
+      message.channel.send(IzRo);
+    });
 
 
 
