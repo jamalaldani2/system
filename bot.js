@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "W";
+var prefix = "+";
 
 client.on('message', message => {
     var args = message.content.toLowerCase().split(' ');
     var command = args[0];
-    var prefix = 'W';
+    var prefix = '+';
     var wordsSay = message.content.split(' ').slice(1).join(' ');
    
     if(command == prefix + 'say') {
