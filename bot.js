@@ -65,56 +65,38 @@ client.on("message", (message) => {
                    });
            });
    }
- 
+ client.on("message", message => {
+    if (message.content === "Kxrules") {
+           message.react("✅")
+              message.react("❌")
+     const embed = new Discord.RichEmbed() 
+         .setColor("#ffff00")
+         .setDescription(`
+  ●▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬●
+1) لا تنشر سيرفرات دسكورد بالعام او بالخاص..
+2) لا تتكلم عن اشياء مشبوهة او اشياء مالها داعي
+3) لا تلعب بالهاك وتدخل مع ناس يلعبون بهاك بماين كرافت
+4) حاول انك ما تسب احد..
+5) لا تكون عنصري ولا تتحرش بأحد بطريقة وصخة...
+6) لا تضحك ع أشياء حساسة..
+7) لا تتكلم عن السياسة ا شيء ديني او حساس
+8) أحترم الأخرين وفكر باللي تقوله
+9) لا تتحرش بالناس ولا تكون شخص متنمر
+10) لا تنشر سيرفرات اخرى ماين كرافت
+11) لا ترسل روابط مواقع او اي شيء اباحي 
+12) لا تحرق ع ناس افلام او مقاطع الخ..
+13) لا تناقش او تصنع نقاشات بين الآخريين
+14) لا تشغل اغاني مزعجة ولا تخرب ع الآخريين
+15) لا تنتحل شخصيات ناس ثانية..
+16) لا تنشر دسكورد او اكاونتات مهكره او اي شيء ثاني
+17) ممنوع السبام
+●▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬●
+  
+    `)
 });
 
 
-client.on('message', message => {
-         
- 
-  if (message.content.startsWith(prefix + "user")) {
-   
-   if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
- 
-       message.guild.fetchInvites().then(invs => {
-let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-var moment = require('moment');
-var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
-var heg;
-if(men) {
-heg = men
-} else {
-heg = message.author
-}
-var mentionned = message.mentions.members.first();
-var h;
-if(mentionned) {
-h = mentionned
-} else {
-h = message.member
-}
-moment.locale('ar-TN');
-var id = new  Discord.RichEmbed()
- 
-.setColor("#0a0909")
-.setThumbnail(message.author.avatarURL)
-.addField(': تاريخ دخولك للديسكورد',` \`${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} \`**\n ${moment(heg.createdTimestamp).fromNow()}**` ,true)
-.addField(': تاريخ دخولك لسيرفرنا', `\`${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')}  \` **\n ${moment(h.joinedAt).fromNow()} **`, true)
-.addField(` :لقد قمت بدعوة `, ` ${inviteCount} `)
- 
- 
-.setFooter(message.author.username, message.author.avatarURL)  
-message.channel.sendEmbed(id);
-})
-}
- 
- 
- 
-});
+
 
 
 
