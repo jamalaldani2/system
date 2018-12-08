@@ -67,25 +67,6 @@ client.on("message", (message) => {
    }
 
 
-client.on("message", msg => {
-    var prefix = "Kx";
-if(msg.content.startsWith (prefix + "id")) {
-if(!msg.channel.guild) return msg.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');         
-const embed = new Discord.RichEmbed();
-embed.addField("🌪  الاسم", `**[ ${msg.author.username}#${msg.author.discriminator} ]**`, true)
-   .addField("🆔  الايدي", `**[ ${msg.author.id} ]**`, true)
-   .setColor("RANDOM")
-   .setFooter(msg.author.username , msg.author.avatarURL)
-   .setThumbnail(`${msg.author.avatarURL}`)
-   .setTimestamp()
-   .setURL(`${msg.author.avatarURL}`)
-   .addField('🕵  الحالة', `**[ ${msg.author.presence.status.toUpperCase()} ]**`, true)
-   .addField('🛰   يلعب', `**[ ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name} ]**`, true)
-   .addField('🎖  الرتب', `**[ ${msg.member.roles.filter(r => r.name).size} ]**`, true)
-   .addField('🤖  هل هو بوت', `**[ ${msg.author.bot.toString().toUpperCase()} ]**`, true);
-msg.channel.send({embed: embed})
-}
-});
 
 
 
